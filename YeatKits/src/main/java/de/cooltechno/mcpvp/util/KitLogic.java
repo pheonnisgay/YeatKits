@@ -35,6 +35,7 @@ public class KitLogic {
     public void saveKit(Player player, String name) throws IOException {
         File directory = new File(Main.getPlugin().getDataFolder().getAbsolutePath());
         File f = new File(Main.getPlugin().getDataFolder().getAbsolutePath(), player.getUniqueId() + "-kit-" + name.toLowerCase() + ".yml");
+        FileConfiguration c = YamlConfiguration.loadConfiguration(f);
 
         if (f.exists()){
             player.sendMessage(Main.prefix + "§4A kit with the name " + name + " exists already");
@@ -45,7 +46,6 @@ public class KitLogic {
 
         if (playerKitCount < 4) {
             player.sendMessage(Main.prefix + name + ChatColor.GREEN +" was successfully created");
-            FileConfiguration c = YamlConfiguration.loadConfiguration(f);
             c.set("inventory.armor", player.getInventory().getArmorContents());
             c.set("inventory.content", player.getInventory().getContents());
             c.save(f);
