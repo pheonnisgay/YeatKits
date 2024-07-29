@@ -1,0 +1,17 @@
+name: YeatKits
+version: '${project.version}'
+main: de.cooltechno.mcpvp.Main
+api-version: '1.20'
+commands:
+
+  kit:
+    description: with this command you can save/load/delete your kits.
+
+  rtp:
+    description: with this command you can get tpd to a random location.
+
+  ping:
+    description: with this command you can check others and your ping.
+
+  ec:
+    description: you can save/load you enderchest.
